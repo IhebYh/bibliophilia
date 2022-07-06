@@ -1,37 +1,46 @@
-// Categories Section widget from home_screen
+/// Categories Section Widget
 import 'package:bibliophilia/providers/categories.dart';
+import 'package:bibliophilia/widgets/categories_widgets/category_item.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'category_item.dart';
-
 class CategoriesSection extends StatelessWidget {
-  const CategoriesSection({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final categories = Provider.of<Categories>(context);
     return Container(
-      padding: const EdgeInsets.only(top:20.0, bottom: 0),
+      padding: EdgeInsets.only(top: 20.0, bottom: 0),
       child: Column(
-      children: <Widget>[
-        Container(
-          padding: const EdgeInsets.only(top: 16.0, left: 22.0, bottom: 8.0),
-          child: Text('Categories',
-            style: GoogleFonts.montserrat(
-                textStyle:
-                const TextStyle(fontSize: 26, fontWeight: FontWeight.w700)
-            )
-        )
-    ),
-        ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: categories.categoriesList.length,
-          itemBuilder: (context, i) =>
-            CategoryItem(categories.categoriesList[i]),
-        )
-    ]),
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 16.0, left: 22.0, bottom: 8.0),
+            child: Text('Categories',
+                style: GoogleFonts.montserrat(
+                    textStyle:
+                    TextStyle(fontSize: 26, fontWeight: FontWeight.w700))),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.70,
+            width: MediaQuery.of(context).size.width * 0.95,
+            /// this builder is responsible for the display of the category items
+            child: GridView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: categories.categoriesList.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 5.0,
+                crossAxisSpacing: 0.0,
+                childAspectRatio: 2 / 3,
+              ),
+              itemBuilder: (context, i) =>
+                  CategoryItem(categories.categoriesList[i]),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,4 +1,4 @@
-// Specific Search Screen
+/// Specific Search Screen Widget
 import 'package:bibliophilia/providers/books.dart';
 import 'package:bibliophilia/services/connectivity_status.dart';
 import 'package:bibliophilia/widgets/books_grid.dart';
@@ -67,7 +67,7 @@ class _SpecificSearchScreenState extends State<SpecificSearchScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              searchArgs['categoryTitle'] != null
+                              searchArgs['categoryTitle'].isNotEmpty
                                   ? 'CATEGORY'
                                   : 'Search results for:',
                               style:
@@ -93,12 +93,13 @@ class _SpecificSearchScreenState extends State<SpecificSearchScreen> {
               ),
             ),
           ),
+          /// This builder is responsible for the build of the books grid if the data is ready
           FutureBuilder(
             future: Provider.of<Books>(context, listen: false)
                 .getSearchedBookByArgs(searchArgs),
             builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Expanded(
+                return Expanded(
                   child: Center(
                     child: CircularProgressIndicator(),
                   ),

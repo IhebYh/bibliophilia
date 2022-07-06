@@ -1,3 +1,4 @@
+/// Search Screen Widget
 import 'package:bibliophilia/providers/books.dart';
 import 'package:bibliophilia/widgets/books_grid.dart';
 import 'package:bibliophilia/widgets/navbar.dart';

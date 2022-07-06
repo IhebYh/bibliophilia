@@ -1,4 +1,5 @@
-// list of books categories
+/// Categories provider Class
+/// list of books categories
 import 'package:bibliophilia/models/category.dart';
 import 'package:flutter/cupertino.dart';
 

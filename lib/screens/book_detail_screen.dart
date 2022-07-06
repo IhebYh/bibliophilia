@@ -1,3 +1,4 @@
+/// Book Detail Screen Widget
 import 'package:bibliophilia/models/book.dart';
 import 'package:bibliophilia/services/utils.dart';
 import 'package:bibliophilia/widgets/detailWidgets/book_details_widget.dart';

@@ -1,4 +1,4 @@
-// Category Item from Categories Section
+/// Category Item Widget
 import 'package:bibliophilia/models/category.dart';
 import 'package:bibliophilia/screens/specific_search_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class _CategoryItemState extends State<CategoryItem> {
       elevation = 4.0;
     });
 
-    Future.delayed(const Duration(milliseconds: 100)).then((_) {
+    Future.delayed(Duration(milliseconds: 100)).then((_) {
       setState(() {
         elevation = 18.0;
       });
@@ -37,14 +37,11 @@ class _CategoryItemState extends State<CategoryItem> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          left: 16, bottom: MediaQuery
-          .of(context)
-          .size
-          .height * 0.09 * 1.3),
+          left: 16, bottom: MediaQuery.of(context).size.height * 0.09 * 1.3),
       child: GestureDetector(
         onTap: navigateToSpecificSearchScreen,
         child: Card(
-          shape: const RoundedRectangleBorder(
+          shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(15),
             ),
@@ -56,15 +53,15 @@ class _CategoryItemState extends State<CategoryItem> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(
-                  width: 40,
-                  height: 40,
+                Container(
+                  width: 30,
+                  height: 30,
                   child: Image.asset(
                     widget.category.iconLink,
                     scale: 1.0,
                   ),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 FittedBox(
                   fit: BoxFit.fitHeight,
                   child: Text(
@@ -72,7 +69,7 @@ class _CategoryItemState extends State<CategoryItem> {
                     textAlign: TextAlign.center,
                     softWrap: true,
                     style: GoogleFonts.montserrat(
-                        textStyle: const TextStyle(
+                        textStyle: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,

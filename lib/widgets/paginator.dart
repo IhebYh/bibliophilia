@@ -1,3 +1,4 @@
+/// Paginator Widget
 import 'package:bibliophilia/providers/books.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -5,6 +6,7 @@ import 'package:provider/provider.dart';
 class Paginator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    /// consume data from the api and display the number of books found
     return Consumer<Books>(
       builder: (BuildContext context, books, _) {
         return Card(

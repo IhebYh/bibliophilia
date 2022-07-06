@@ -1,3 +1,4 @@
+/// bookmark Widget
 import 'package:bibliophilia/models/book.dart';
 import 'package:bibliophilia/providers/bookshelf.dart';
 import 'package:bibliophilia/services/utils.dart';
@@ -27,11 +28,13 @@ class _BookmarkState extends State<Bookmark> {
           iconSize: 32,
           onPressed: snapshot.data == true
               ? () async {
+            /// Delete a book from the saved books list in the DB
                   await Provider.of<Bookshelf>(context, listen: false)
                       .removeSavedBook(widget.bookId);
                   setState(() {});
                 }
               : () {
+            /// add a book from the saved books list in the DB
                   Provider.of<Bookshelf>(context, listen: false).addToBookShelf(
                     widget.book.id,
                     widget.book.title,

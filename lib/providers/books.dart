@@ -1,3 +1,7 @@
+/// Books provider Class
+/// Checking loading stream if it's the data is loaded
+/// the presentation layer will be notified then the ui will
+/// display data using the functions provided
 import 'dart:convert';
 import 'package:bibliophilia/models/book.dart';
 import 'package:bibliophilia/services/utils.dart';
@@ -15,7 +19,7 @@ class Books extends ChangeNotifier {
   int startIndex = 0;
   String _searchedString = '';
   Map _searchedArgs = {};
-  late int totalItems;
+  int totalItems = 0;
   bool _isLoading = false;
   bool _reachedEnd = false;
   bool _firstLoad = true;
@@ -91,7 +95,7 @@ class Books extends ChangeNotifier {
       }
 
       List searchedBooksJson = jsonResponse['items'];
-      if (searchedBooksJson == null) {
+      if (searchedBooksJson.isEmpty) {
         _reachedEnd = true;
         return;
       }
@@ -113,7 +117,7 @@ class Books extends ChangeNotifier {
     calledBy = PaginatorCall.byArgs;
     _searchedArgs = searchArgs;
     _searchedBooksList.clear();
-    var url;
+    String url = '';
     if (searchArgs.containsKey('bookTitle') &&
         searchArgs.containsKey('bookAuthor')) {
       url =
@@ -125,13 +129,13 @@ class Books extends ChangeNotifier {
     }
     try {
       _reachedEnd = false;
-      http.Response response = await http.get(url);
+      http.Response response = await http.get(Uri.parse(url));
       var jsonResponse = await jsonDecode(response.body);
       setSpecificScreenLoadingState(false);
       if (_firstLoad) totalItems = jsonResponse['totalItems'];
 
       List searchedBooksJson = jsonResponse['items'];
-      if (searchedBooksJson == null) {
+      if (searchedBooksJson.isEmpty) {
         _reachedEnd = true;
         return;
       }

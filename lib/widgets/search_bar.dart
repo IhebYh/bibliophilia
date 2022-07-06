@@ -1,3 +1,5 @@
+/// SearchBar Widget
+/// Searching for books from the api using args (title - author)
 import 'package:bibliophilia/providers/books.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

@@ -1,3 +1,4 @@
+/// MetaData Widget
 import 'package:bibliophilia/models/book.dart';
 import 'package:bibliophilia/services/utils.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class MetadataWidget extends StatelessWidget {
                 style: TextStyle(color: Colors.teal),
               ),
               Text(
-                book.pageCount?.toString() ?? '---' ,
+                /*book.pageCount != null ? book.pageCount.toString() : */'---' ,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ],

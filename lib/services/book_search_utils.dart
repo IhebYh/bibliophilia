@@ -1,3 +1,5 @@
+/// Book Search Utilities Class
+/// Searching for a single book data
 import 'dart:convert';
 
 import 'package:bibliophilia/models/book.dart';

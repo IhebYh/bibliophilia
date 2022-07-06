@@ -1,3 +1,5 @@
+/// Saved books Widget
+/// Fetches data from DB and build a ui displaying the saved books by the user
 import 'package:bibliophilia/models/savedBook.dart';
 import 'package:bibliophilia/providers/bookshelf.dart';
 import 'package:bibliophilia/screens/book_detail_screen.dart';

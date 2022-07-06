@@ -1,4 +1,4 @@
-// category model
+/// category model
 class Categ {
   final String categoryTitle;
   final String categoryLink;

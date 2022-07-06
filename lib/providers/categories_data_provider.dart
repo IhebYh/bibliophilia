@@ -1,9 +1,10 @@
+/// CategoriesData provider Class
 import 'dart:convert';
 import 'package:bibliophilia/models/category.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-class NYT with ChangeNotifier {
+class CategoriesData with ChangeNotifier {
   bool _loaded = false;
   List<Categ> _categories = [];
   String _selectedCategory = '';
@@ -26,7 +27,7 @@ class NYT with ChangeNotifier {
   }
 
   Future<void> getCategoryList() async {
-    var apiKey = '----API KEY-----';
+    var apiKey = 'AIzaSyAWUDA3M7es_gJ2Bqzp4ItU07LpO_RbMHw';
     final url =
         'https://www.googleapis.com/svc/books/v3/lists/names.json?api-key=$apiKey';
     try {

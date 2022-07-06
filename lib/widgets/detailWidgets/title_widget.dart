@@ -1,3 +1,4 @@
+/// Title Widget
 import 'package:bibliophilia/models/book.dart';
 import 'package:bibliophilia/services/utils.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class TitleWidget extends StatelessWidget {
                       const TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0)),
             ),
           ),
-          if (book.subtitle?.isEmpty ?? false)
+          if (book.subtitle.isNotEmpty)
             Text(
               Utils.trimString(book.subtitle, 40),
               textAlign: TextAlign.center,

@@ -1,3 +1,4 @@
+/// Categories Widget
 import 'package:bibliophilia/models/book.dart';
 import 'package:bibliophilia/services/utils.dart';
 import 'package:flutter/material.dart';

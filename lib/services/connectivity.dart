@@ -1,4 +1,4 @@
-// Create a public controller to get the connectivity status
+/// Create a public controller to get the connectivity status
 import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:bibliophilia/services/connectivity_status.dart';

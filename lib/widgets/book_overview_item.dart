@@ -1,3 +1,4 @@
+/// BookOverViewITem Widget
 import 'package:bibliophilia/providers/books.dart';
 import 'package:bibliophilia/screens/book_detail_screen.dart';
 import 'package:bibliophilia/services/utils.dart';
@@ -52,7 +53,7 @@ class BookOverviewItem extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 4.0),
-          if (book.title != null)
+          if (book.title.isNotEmpty)
             Expanded(
               flex: 2,
               child: Text(

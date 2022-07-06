@@ -1,3 +1,4 @@
+/// Navbar Widget
 import 'dart:math';
 import 'package:bibliophilia/providers/books.dart';
 import 'package:bibliophilia/screens/bookshelf_screen.dart';

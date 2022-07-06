@@ -1,3 +1,4 @@
+/// Bookshelf Screen Widget
 import 'package:bibliophilia/providers/bookshelf.dart';
 import 'package:bibliophilia/widgets/navbar.dart';
 import 'package:bibliophilia/widgets/saved_book_item.dart';
@@ -32,11 +33,11 @@ class _BookShelfScreenState extends State<BookShelfScreen> {
                 Material(
                   elevation: 2,
                   child: Container(
-                    height: 150,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage("images/book_title.jpg"),
-                            fit: BoxFit.cover)),
+                     height: 150,
+                    // decoration: const BoxDecoration(
+                    //     image: DecorationImage(
+                    //         image: AssetImage("images/book_title.jpg"),
+                    //         fit: BoxFit.cover)),
                     child: Container(
                       color: Colors.black38,
                       child: SafeArea(

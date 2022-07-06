@@ -1,3 +1,6 @@
+/// BookDetail Widget
+/// contains all the widgets in this folder to display the final widget
+/// having the book detail
 import 'package:bibliophilia/models/book.dart';
 import 'package:bibliophilia/widgets/detailWidgets/actions_widget.dart';
 import 'package:bibliophilia/widgets/detailWidgets/authors_widget.dart';

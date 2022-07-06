@@ -1,4 +1,4 @@
-// saved books model
+/// saved books model
 class SavedBook {
   final String id;
   final String title;

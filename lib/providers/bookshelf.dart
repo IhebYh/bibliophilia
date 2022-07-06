@@ -1,3 +1,7 @@
+/// Bookshelf provider Class
+/// it's responsible for the add, delete and display
+/// of the books saved by the user
+
 import 'package:bibliophilia/models/savedBook.dart';
 import 'package:bibliophilia/services/db_helper.dart';
 import 'package:flutter/cupertino.dart';
